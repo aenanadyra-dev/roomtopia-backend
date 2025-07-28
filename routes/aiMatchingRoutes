@@ -1,0 +1,43 @@
+const express = require('express');
+const User = require('../models/User');
+const AIMatch = require('../models/AIMatch');
+const router = express.Router();
+
+// Test route for AI matching
+router.get('/test', (req, res) => {
+  res.json({
+    success: true,
+    message: '🤖 AI Matching routes are working!',
+    timestamp: new Date()
+  });
+});
+
+// Calculate compatibility between two users (placeholder for now)
+router.post('/calculate-compatibility', async (req, res) => {
+  try {
+    const { user1Email, user2Email } = req.body;
+    
+    // For now, return a mock compatibility score
+    const mockCompatibility = {
+      compatibilityScore: Math.floor(Math.random() * 40) + 60, // 60-100%
+      strengths: ['Similar age group', 'Compatible budget range'],
+      concerns: ['Different study habits'],
+      recommendation: 'Good potential match!'
+    };
+    
+    res.json({
+      success: true,
+      compatibility: mockCompatibility,
+      message: '🤖 AI compatibility calculated!'
+    });
+    
+  } catch (error) {
+    console.error('🦕 AI matching error:', error);
+    res.status(500).json({ 
+      success: false, 
+      error: error.message 
+    });
+  }
+});
+
+module.exports = router;

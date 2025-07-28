@@ -1,0 +1,49 @@
+{
+  "name": "roomtopia-server",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "seed-exhibition": "node scripts/seedExhibitionData.js",
+    "seed-users": "node scripts/seed-users.js",
+    "seed-properties": "node scripts/seedProperties.js",
+    "seed-roommates": "node scripts/seedRoommateRequests.js",
+    "seed-analytics": "node scripts/seedAnalytics.js",
+    "create-auto-profiles": "node scripts/createAutoRoommateProfiles.js",
+    "create-2025-profiles": "node scripts/createRealistic2025Profiles.js",
+    "create-admin": "node scripts/createAdmin.js"
+  },
+  "keywords": [
+    "roomtopia",
+    "rental",
+    "student",
+    "housing"
+  ],
+  "author": "Your Name",
+  "license": "ISC",
+  "dependencies": {
+    "apify": "^3.4.2",
+    "axios": "^1.9.0",
+    "bcrypt": "^6.0.0",
+    "bcryptjs": "^3.0.2",
+    "cheerio": "^1.0.0",
+    "cors": "^2.8.5",
+    "crawlee": "^3.13.5",
+    "dotenv": "^16.5.0",
+    "express": "^4.18.2",
+    "express-rate-limit": "^7.5.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.13.2",
+    "multer": "^2.0.0",
+    "node-fetch": "^3.3.2",
+    "openai": "^5.0.1",
+    "playwright": "^1.52.0",
+    "puppeteer": "^24.9.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.0"
+  },
+  "description": "Backend server for Roomtopia student housing platform"
+}
