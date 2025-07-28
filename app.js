@@ -41,7 +41,10 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 console.log('📁 Static files served from:', path.join(__dirname, 'uploads'));
 
 // MongoDB connection
-mongoose.connect('mongodb://localhost:27017/roomtopia')
+mongoose.connect(process.env.MONGO_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+})
 .then(() => console.log('✅ MongoDB Connected to roomtopia database'))
 .catch(err => console.error('❌ MongoDB Error:', err));
 
