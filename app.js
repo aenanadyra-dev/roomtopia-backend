@@ -18,7 +18,10 @@ app.use(express.urlencoded({ extended: true }));
 
 // Basic middleware
 app.use(cors({
-  origin: 'http://localhost:3000', // Your React app URL
+  origin: [
+    'http://localhost:3000',                      // ✅ local dev
+    'https://roomtopia-frontend.vercel.app'       // ✅ production vercel
+  ],
   credentials: true
 }));
 app.use(express.json());
